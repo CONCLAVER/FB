@@ -10,9 +10,9 @@ export const Directions = () => (
           key={d.title}
           className="clip-cut group bg-moss p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-olive/30 md:p-8"
         >
-          <span className="clip-cut-sm inline-flex h-8 w-8 items-center justify-center border border-bone/15 bg-ink font-display text-xs font-bold text-flame">
+          <p className="font-display text-xs font-bold text-khaki">
             {String(i + 1).padStart(2, "0")}
-          </span>
+          </p>
           <h3 className="mt-3 font-display text-lg font-black uppercase transition-colors group-hover:text-flame">
             {d.title}
           </h3>
