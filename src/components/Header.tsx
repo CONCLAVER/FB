@@ -59,7 +59,7 @@ export const Header = () => {
 
         <button
           type="button"
-          className="text-khaki lg:hidden"
+          className="clip-cut-sm inline-flex h-9 w-9 items-center justify-center border border-bone/15 bg-ink text-flame lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={open}

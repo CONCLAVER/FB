@@ -60,7 +60,7 @@ export const SignupModalProvider = ({ children }: { children: ReactNode }) => {
               type="button"
               onClick={close}
               aria-label="Закрыть"
-              className="absolute right-4 top-4 text-khaki/70 transition-colors hover:text-flame focus-visible:outline-2 focus-visible:outline-flame"
+              className="clip-cut-sm absolute right-4 top-4 flex h-8 w-8 items-center justify-center border border-bone/15 bg-ink text-flame transition-colors hover:bg-flame hover:text-ink focus-visible:outline-2 focus-visible:outline-flame"
             >
               <X />
             </button>

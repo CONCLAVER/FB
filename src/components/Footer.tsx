@@ -1,5 +1,6 @@
 import { Clock, MapPin, Phone } from "lucide-react";
 import { CLUB } from "@/data/club";
+import { IconBadge } from "./IconBadge";
 import { VkIcon } from "./VkIcon";
 
 const mapUrl = `https://yandex.ru/maps/?text=${encodeURIComponent(CLUB.address)}`;
@@ -20,9 +21,9 @@ export const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Сообщество клуба во ВКонтакте"
-          className="clip-cut-sm mt-6 inline-flex h-11 w-11 items-center justify-center bg-moss text-khaki transition-all duration-300 hover:-translate-y-0.5 hover:bg-flame hover:text-ink"
+          className="clip-cut-sm mt-6 inline-flex h-9 w-9 items-center justify-center border border-bone/15 bg-ink text-flame transition-all duration-300 hover:-translate-y-0.5 hover:bg-flame hover:text-ink"
         >
-          <VkIcon className="h-5 w-5" />
+          <VkIcon className="h-4 w-4" />
         </a>
       </div>
 
@@ -30,8 +31,10 @@ export const Footer = () => (
         <h3 className="font-display text-xs font-bold uppercase tracking-[0.3em] text-flame">
           Контакты
         </h3>
-        <p className="flex items-start gap-2 text-khaki">
-          <MapPin aria-hidden className="mt-0.5 h-4 w-4 shrink-0" />
+        <p className="flex items-center gap-3 text-khaki">
+          <IconBadge>
+            <MapPin aria-hidden className="h-4 w-4" />
+          </IconBadge>
           <a
             href={mapUrl}
             target="_blank"
@@ -41,8 +44,10 @@ export const Footer = () => (
             {CLUB.address}
           </a>
         </p>
-        <p className="flex items-center gap-2 text-khaki">
-          <Phone aria-hidden className="h-4 w-4 shrink-0" />
+        <p className="flex items-center gap-3 text-khaki">
+          <IconBadge>
+            <Phone aria-hidden className="h-4 w-4" />
+          </IconBadge>
           <a
             href={CLUB.phoneHref}
             className="font-semibold text-bone transition-colors hover:text-flame"
@@ -50,8 +55,10 @@ export const Footer = () => (
             {CLUB.phone}
           </a>
         </p>
-        <p className="flex items-center gap-2 text-khaki">
-          <Clock aria-hidden className="h-4 w-4 shrink-0" />
+        <p className="flex items-center gap-3 text-khaki">
+          <IconBadge>
+            <Clock aria-hidden className="h-4 w-4" />
+          </IconBadge>
           Открываемся в {CLUB.opensAt}
         </p>
       </div>
