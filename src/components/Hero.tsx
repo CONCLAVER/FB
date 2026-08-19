@@ -40,7 +40,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="clip-cut group relative h-72 overflow-hidden md:h-96">
+        <div className="clip-cut group relative aspect-video overflow-hidden md:h-96">
           <Image
             src="/images/hero.jpg"
             alt="Спарринг в зале клуба ФАЙТБОКСИНГ"

@@ -28,7 +28,7 @@ export const Header = () => {
             <span className="block font-display text-sm font-black uppercase tracking-widest">
               Fightboxing
             </span>
-            <span className="mt-1 block text-[10px] uppercase tracking-[0.3em] text-khaki">
+            <span className="mt-1 hidden text-[10px] uppercase tracking-[0.3em] text-khaki sm:block">
               клуб единоборств · НН
             </span>
           </span>
