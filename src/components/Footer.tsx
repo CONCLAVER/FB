@@ -21,9 +21,9 @@ export const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Сообщество клуба во ВКонтакте"
-          className="clip-cut-sm mt-6 inline-flex h-9 w-9 items-center justify-center border border-bone/15 bg-ink text-flame transition-all duration-300 hover:-translate-y-0.5 hover:bg-flame hover:text-ink"
+          className="clip-cut-sm mt-6 inline-flex h-11 w-11 items-center justify-center border border-bone/15 bg-ink text-flame transition-all duration-300 hover:-translate-y-0.5 hover:bg-flame hover:text-ink"
         >
-          <VkIcon className="h-4 w-4" />
+          <VkIcon className="h-5 w-5" />
         </a>
       </div>
 
