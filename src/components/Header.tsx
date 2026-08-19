@@ -59,7 +59,7 @@ export const Header = () => {
 
         <button
           type="button"
-          className="text-bone lg:hidden"
+          className="text-khaki lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={open}
