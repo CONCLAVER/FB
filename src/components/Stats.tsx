@@ -57,7 +57,7 @@ export const Stats = () => (
       {STATS.map((s) => (
         <div
           key={s.value}
-          className="bg-ink p-6 transition-colors duration-300 hover:bg-moss md:p-8"
+          className="border border-bone/15 bg-ink p-6 transition-colors duration-300 hover:bg-moss md:p-8"
         >
           <AnimatedValue raw={s.value} />
           <dt className="mt-2 text-sm text-khaki">{s.label}</dt>

@@ -8,7 +8,7 @@ export const Directions = () => (
       {DIRECTIONS.map((d, i) => (
         <article
           key={d.title}
-          className="clip-cut group bg-moss p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-olive/30 md:p-8"
+          className="clip-cut group border border-bone/15 bg-moss p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-olive/30 md:p-8"
         >
           <p className="font-display text-xs font-bold text-khaki">
             {String(i + 1).padStart(2, "0")}

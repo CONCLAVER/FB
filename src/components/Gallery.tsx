@@ -11,7 +11,7 @@ export const Gallery = () => (
         <Placeholder
           key={s}
           label={s}
-          className="h-40 transition-transform duration-300 hover:-translate-y-1 md:h-52"
+          className="h-40 border border-bone/15 bg-moss transition-transform duration-300 hover:-translate-y-1 md:h-52"
         />
       ))}
     </div>
