@@ -31,7 +31,7 @@ export const Schedule = () => {
 
         <div className="grid gap-4 md:grid-cols-2">
           {SCHEDULE[tab].map((g) => (
-            <article key={g.group} className="clip-cut bg-ink p-6 md:p-8">
+            <article key={g.group} className="clip-cut border border-bone/15 bg-ink p-6 md:p-8">
               <h3 className="font-display text-base font-black uppercase md:text-lg">
                 {g.group}
               </h3>
