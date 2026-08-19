@@ -16,7 +16,7 @@ export const About = () => (
           key={p.title}
           className="clip-cut border border-bone/15 bg-moss p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-olive/30 md:p-8"
         >
-          <p className="font-display text-xs font-bold text-flame">0{i + 1}</p>
+          <p className="font-display text-xs font-bold text-khaki">0{i + 1}</p>
           <h3 className="mt-3 font-display text-base font-black uppercase">
             {p.title} подготовка
           </h3>
