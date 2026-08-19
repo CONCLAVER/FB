@@ -12,7 +12,6 @@ import {
 import { Phone, X } from "lucide-react";
 import { CLUB } from "@/data/club";
 import { ClipButton } from "./ClipButton";
-import { VkIcon } from "./VkIcon";
 
 const SignupContext = createContext<() => void>(() => {});
 
@@ -74,14 +73,10 @@ export const SignupModalProvider = ({ children }: { children: ReactNode }) => {
             <p className="mt-4 text-sm text-khaki">
               Запись — через связь с администрацией клуба или тренером:
             </p>
-            <div className="mt-6 flex flex-col gap-3">
+            <div className="mt-6">
               <ClipButton href={CLUB.phoneHref}>
                 <Phone className="h-4 w-4" />
                 {CLUB.phone}
-              </ClipButton>
-              <ClipButton href={CLUB.vk} external variant="ghost">
-                <VkIcon className="h-4 w-4" />
-                Написать в VK
               </ClipButton>
             </div>
           </div>

@@ -35,11 +35,8 @@ export const Hero = () => {
             тренеры с педагогическим образованием, группы для детей с 7 лет и
             взрослых.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8">
             <ClipButton onClick={openSignup}>Записаться на пробное</ClipButton>
-            <ClipButton href={CLUB.vk} external variant="ghost">
-              Написать в VK
-            </ClipButton>
           </div>
         </div>
 
