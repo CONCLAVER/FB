@@ -18,12 +18,12 @@
   --t-flame: #ff6b2e;
 }
 
-[data-theme="cocoa"] {
-  --t-ink: #120d09;
-  --t-moss: #1f1710;
-  --t-olive: #7a5c3e;
-  --t-khaki: #b39a7d;
-  --t-bone: #f4ece1;
+[data-theme="navy"] {
+  --t-ink: #0a0e1a;
+  --t-moss: #131a2c;
+  --t-olive: #3d4a6b;
+  --t-khaki: #8fa0c5;
+  --t-bone: #eef2fb;
   --t-flame: #ff6b2e;
 }
 
