@@ -10,6 +10,7 @@ import { Schedule } from "@/components/Schedule";
 import { Stats } from "@/components/Stats";
 import { Ticker } from "@/components/Ticker";
 import { Trainer } from "@/components/Trainer";
+import { VariantNav } from "@/components/VariantNav";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <CtaBanner />
       </main>
       <Footer />
+      <VariantNav />
     </>
   );
 }

@@ -35,11 +35,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ru"
       className={`${unbounded.variable} ${manrope.variable} h-full antialiased`}
     >
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();`,
-        }}
-      />
       <body className="min-h-full bg-ink text-bone">
         <SignupModalProvider>{children}</SignupModalProvider>
       </body>

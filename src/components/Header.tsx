@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 import { CLUB, NAV } from "@/data/club";
 import { ClipButton } from "./ClipButton";
 import { useSignup } from "./SignupModal";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const navLink =
   "relative text-sm font-semibold uppercase tracking-wider text-khaki transition-colors hover:text-flame after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-flame after:transition-transform after:duration-300 hover:after:scale-x-100";
@@ -57,8 +56,6 @@ export const Header = () => {
             Записаться
           </ClipButton>
         </div>
-
-        <ThemeSwitcher />
 
         <button
           type="button"

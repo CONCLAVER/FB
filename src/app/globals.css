@@ -9,24 +9,6 @@
   --t-flame: #ff6b2e;
 }
 
-[data-theme="steel"] {
-  --t-ink: #0d0e10;
-  --t-moss: #1a1b1e;
-  --t-olive: #565a63;
-  --t-khaki: #9aa0ab;
-  --t-bone: #f1f2f4;
-  --t-flame: #ff6b2e;
-}
-
-[data-theme="navy"] {
-  --t-ink: #0a0e1a;
-  --t-moss: #131a2c;
-  --t-olive: #3d4a6b;
-  --t-khaki: #8fa0c5;
-  --t-bone: #eef2fb;
-  --t-flame: #ff6b2e;
-}
-
 @theme inline {
   --font-display: var(--font-unbounded);
   --font-sans: var(--font-manrope);
