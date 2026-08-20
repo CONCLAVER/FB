@@ -47,7 +47,11 @@ export const Pricing = () => {
                 ))}
               </ul>
               <ClipButton
-                onClick={openSignup}
+                onClick={() =>
+                  openSignup(
+                    p.title === "Пробное" ? undefined : `Абонемент «${p.title}»`
+                  )
+                }
                 variant={p.featured ? "primary" : "ghost"}
                 className="mt-8 w-full"
               >

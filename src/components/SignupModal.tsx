@@ -13,15 +13,19 @@ import { Phone, X } from "lucide-react";
 import { CLUB } from "@/data/club";
 import { ClipButton } from "./ClipButton";
 
-const SignupContext = createContext<() => void>(() => {});
+const SignupContext = createContext<(label?: string) => void>(() => {});
 
 export const useSignup = () => useContext(SignupContext);
 
 export const SignupModalProvider = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
+  const [label, setLabel] = useState<string | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
-  const openSignup = useCallback(() => setOpen(true), []);
+  const openSignup = useCallback((l?: string) => {
+    setLabel(l ?? null);
+    setOpen(true);
+  }, []);
   const close = useCallback(() => setOpen(false), []);
 
   useEffect(() => {
@@ -68,7 +72,7 @@ export const SignupModalProvider = ({ children }: { children: ReactNode }) => {
               {CLUB.name}
             </p>
             <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight md:text-2xl">
-              Запись на пробное занятие
+              {label ?? "Запись на пробное занятие"}
             </h2>
             <p className="mt-4 text-sm text-khaki">
               Запись — через связь с администрацией клуба или тренером:
