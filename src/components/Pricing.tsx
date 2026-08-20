@@ -14,14 +14,14 @@ export const Pricing = () => {
         <SectionTitle kicker="Стоимость" title="Абонементы" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {PRICING.map((p) => (
-            <div key={p.title} className="relative">
+            <div key={p.title} className="group relative transition-all duration-300 hover:-translate-y-1">
               {p.featured && (
                 <span className="clip-cut-sm absolute -top-3 left-6 z-10 bg-flame px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-ink">
                   Оптимальный
                 </span>
               )}
               <article
-                className={`clip-cut flex flex-col border bg-moss p-6 transition-all duration-300 hover:-translate-y-1 md:p-8 ${
+                className={`clip-cut flex flex-col border bg-moss p-6 md:p-8 ${
                   p.featured
                     ? "border-flame"
                     : "border-bone/15"
