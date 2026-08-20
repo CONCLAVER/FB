@@ -23,6 +23,12 @@ body {
   @apply bg-ink font-sans text-bone antialiased;
 }
 
+@media (min-width: 1024px) {
+  body {
+    zoom: 1.25;
+  }
+}
+
 ::selection {
   background: var(--color-flame);
   color: var(--color-ink);
