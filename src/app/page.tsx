@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Gallery } from "@/components/Gallery";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { Pricing } from "@/components/Pricing";
 import { Schedule } from "@/components/Schedule";
 import { Stats } from "@/components/Stats";
 import { Ticker } from "@/components/Ticker";
@@ -20,6 +21,7 @@ export default function Home() {
         <Stats />
         <Directions />
         <Schedule />
+        <Pricing />
         <About />
         <Trainer />
         <Gallery />

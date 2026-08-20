@@ -15,6 +15,7 @@ export const NAV = [
   { href: "#about", label: "О клубе" },
   { href: "#directions", label: "Направления" },
   { href: "#schedule", label: "Расписание" },
+  { href: "#pricing", label: "Абонементы" },
   { href: "#trainer", label: "Тренер" },
   { href: "#contacts", label: "Контакты" },
 ] as const;
@@ -97,6 +98,41 @@ export const PREP = [
   {
     title: "Морально-волевая",
     text: "Смелость, решительность, выдержка, дисциплина, целеустремлённость и трудолюбие.",
+  },
+] as const;
+
+export const PRICING = [
+  {
+    title: "Пробное",
+    price: "500",
+    period: "одно занятие",
+    perLesson: null,
+    features: ["Знакомство с тренером", "Оценка уровня подготовки", "Подбор группы"],
+    featured: false,
+  },
+  {
+    title: "Старт",
+    price: "5000",
+    period: "8 занятий",
+    perLesson: "~625 ₽/занятие",
+    features: ["Срок действия 1 месяц", "Любое направление", "Групповые тренировки"],
+    featured: true,
+  },
+  {
+    title: "Прогресс",
+    price: "6500",
+    period: "12 занятий",
+    perLesson: "~542 ₽/занятие · выгода 11%",
+    features: ["Срок действия 1.5 месяца", "Любое направление", "Групповые тренировки"],
+    featured: false,
+  },
+  {
+    title: "Персональные",
+    price: "по запросу",
+    period: "индивидуально",
+    perLesson: null,
+    features: ["Время согласовывается", "Любое направление", "Персональный тренер"],
+    featured: false,
   },
 ] as const;
 
