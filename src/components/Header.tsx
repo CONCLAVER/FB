@@ -35,7 +35,7 @@ export const Header = () => {
         </a>
 
         <nav
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-5 xl:flex"
           aria-label="Основная навигация"
         >
           {NAV.map((item) => (
@@ -45,7 +45,7 @@ export const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-5 xl:flex">
           <a
             href={CLUB.phoneHref}
             className="text-sm font-bold tracking-wide transition-colors hover:text-flame"
@@ -59,7 +59,7 @@ export const Header = () => {
 
         <button
           type="button"
-          className="clip-cut-sm inline-flex h-9 w-9 items-center justify-center border border-bone/15 bg-ink text-flame lg:hidden"
+          className="clip-cut-sm inline-flex h-9 w-9 items-center justify-center border border-bone/15 bg-ink text-flame xl:hidden"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={open}
@@ -70,7 +70,7 @@ export const Header = () => {
 
       {open && (
         <nav
-          className="flex flex-col gap-4 border-t border-bone/10 bg-ink px-4 py-6 lg:hidden"
+          className="flex flex-col gap-4 border-t border-bone/10 bg-ink px-4 py-6 xl:hidden"
           aria-label="Мобильная навигация"
         >
           {NAV.map((item) => (

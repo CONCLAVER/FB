@@ -16,14 +16,14 @@ export const Pricing = () => {
           {PRICING.map((p) => (
             <article
               key={p.title}
-              className={`clip-cut relative flex flex-col border bg-moss p-6 transition-all duration-300 hover:-translate-y-1 md:p-8 ${
+              className={`clip-cut flex flex-col border bg-moss p-6 transition-all duration-300 hover:-translate-y-1 md:p-8 ${
                 p.featured
                   ? "border-flame"
                   : "border-bone/15"
               }`}
             >
               {p.featured && (
-                <span className="clip-cut-sm absolute -top-3 left-6 bg-flame px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-ink">
+                <span className="clip-cut-sm mb-4 self-start bg-flame px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-ink">
                   Оптимальный
                 </span>
               )}
