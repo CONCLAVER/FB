@@ -21,6 +21,8 @@ export const Ticker = () => (
     <div className="animate-marquee flex w-max">
       <Row />
       <Row />
+      <Row />
+      <Row />
     </div>
   </div>
 );

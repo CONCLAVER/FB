@@ -1,17 +1,41 @@
 @import "tailwindcss";
 
+:root {
+  --t-ink: #0c0e09;
+  --t-moss: #1a1a1a;
+  --t-olive: #6d7448;
+  --t-khaki: #9ba183;
+  --t-bone: #f1efe4;
+  --t-flame: #ff6b2e;
+}
+
+[data-theme="blood"] {
+  --t-ink: #0b0b0e;
+  --t-moss: #1a1a1f;
+  --t-olive: #5a5a66;
+  --t-khaki: #a0a0ab;
+  --t-bone: #f2f2ef;
+  --t-flame: #e63946;
+}
+
+[data-theme="gold"] {
+  --t-ink: #0a0908;
+  --t-moss: #1a1714;
+  --t-olive: #6b5b33;
+  --t-khaki: #b3a37b;
+  --t-bone: #f4efe2;
+  --t-flame: #d9a441;
+}
+
 @theme inline {
   --font-display: var(--font-unbounded);
   --font-sans: var(--font-manrope);
-}
-
-@theme {
-  --color-ink: #0c0e09;
-  --color-moss: #1a1a1a;
-  --color-olive: #6d7448;
-  --color-khaki: #9ba183;
-  --color-bone: #f1efe4;
-  --color-flame: #ff6b2e;
+  --color-ink: var(--t-ink);
+  --color-moss: var(--t-moss);
+  --color-olive: var(--t-olive);
+  --color-khaki: var(--t-khaki);
+  --color-bone: var(--t-bone);
+  --color-flame: var(--t-flame);
 }
 
 html {
