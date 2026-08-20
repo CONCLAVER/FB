@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 export const THEMES = [
-  { id: "olive", label: "Олива и огонь", swatch: "#ff6b2e" },
-  { id: "blood", label: "Сталь и кровь", swatch: "#e63946" },
-  { id: "gold", label: "Чёрный и золото", swatch: "#d9a441" },
+  { id: "olive", label: "Олива", swatch: "#6d7448" },
+  { id: "steel", label: "Графит", swatch: "#565a63" },
+  { id: "cocoa", label: "Какао", swatch: "#7a5c3e" },
 ] as const;
 
 type ThemeId = (typeof THEMES)[number]["id"];

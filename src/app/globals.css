@@ -9,22 +9,22 @@
   --t-flame: #ff6b2e;
 }
 
-[data-theme="blood"] {
-  --t-ink: #0b0b0e;
-  --t-moss: #1a1a1f;
-  --t-olive: #5a5a66;
-  --t-khaki: #a0a0ab;
-  --t-bone: #f2f2ef;
-  --t-flame: #e63946;
+[data-theme="steel"] {
+  --t-ink: #0d0e10;
+  --t-moss: #1a1b1e;
+  --t-olive: #565a63;
+  --t-khaki: #9aa0ab;
+  --t-bone: #f1f2f4;
+  --t-flame: #ff6b2e;
 }
 
-[data-theme="gold"] {
-  --t-ink: #0a0908;
-  --t-moss: #1a1714;
-  --t-olive: #6b5b33;
-  --t-khaki: #b3a37b;
-  --t-bone: #f4efe2;
-  --t-flame: #d9a441;
+[data-theme="cocoa"] {
+  --t-ink: #120d09;
+  --t-moss: #1f1710;
+  --t-olive: #7a5c3e;
+  --t-khaki: #b39a7d;
+  --t-bone: #f4ece1;
+  --t-flame: #ff6b2e;
 }
 
 @theme inline {
