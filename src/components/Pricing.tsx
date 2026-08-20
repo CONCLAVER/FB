@@ -14,22 +14,22 @@ export const Pricing = () => {
         <SectionTitle kicker="Стоимость" title="Абонементы" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {PRICING.map((p) => (
-            <article
-              key={p.title}
-              className={`clip-cut flex flex-col border bg-moss p-6 transition-all duration-300 hover:-translate-y-1 md:p-8 ${
-                p.featured
-                  ? "border-flame pt-10"
-                  : "border-bone/15"
-              }`}
-            >
+            <div key={p.title} className="relative">
               {p.featured && (
-                <span className="clip-cut-sm absolute -top-3 left-6 bg-flame px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-ink">
+                <span className="clip-cut-sm absolute -top-3 left-6 z-10 bg-flame px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest text-ink">
                   Оптимальный
                 </span>
               )}
-              <h3 className="font-display text-base font-black uppercase">
-                {p.title}
-              </h3>
+              <article
+                className={`clip-cut flex flex-col border bg-moss p-6 transition-all duration-300 hover:-translate-y-1 md:p-8 ${
+                  p.featured
+                    ? "border-flame"
+                    : "border-bone/15"
+                }`}
+              >
+                <h3 className="font-display text-base font-black uppercase">
+                  {p.title}
+                </h3>
               <p className="mt-4 font-display text-3xl font-black text-flame md:text-4xl">
                 {p.price}
                 {p.price !== "по запросу" && <span className="text-lg text-khaki"> ₽</span>}
@@ -46,18 +46,19 @@ export const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <ClipButton
-                onClick={() =>
-                  openSignup(
-                    p.title === "Пробное" ? undefined : `Абонемент «${p.title}»`
-                  )
-                }
-                variant={p.featured ? "primary" : "ghost"}
-                className="mt-8 w-full"
-              >
-                Записаться
-              </ClipButton>
-            </article>
+                <ClipButton
+                  onClick={() =>
+                    openSignup(
+                      p.title === "Пробное" ? undefined : `Абонемент «${p.title}»`
+                    )
+                  }
+                  variant={p.featured ? "primary" : "ghost"}
+                  className="mt-8 w-full"
+                >
+                  Записаться
+                </ClipButton>
+              </article>
+            </div>
           ))}
         </div>
       </div>
