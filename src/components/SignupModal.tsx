@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Phone, X } from "lucide-react";
 import { CLUB } from "../data/club";
+import { VkIcon } from "./VkIcon";
 
 export const SignupModal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,18 +52,27 @@ export const SignupModal = () => {
           {CLUB.name}
         </p>
         <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight md:text-2xl">
-          {CLUB.slogan}
+          Начните свой путь в единоборствах
         </h2>
         <p className="mt-4 text-sm text-khaki">
-          Для записи позвоните по номеру телефона:
+          Запишитесь на бесплатное пробное занятие — мы подберём удобное время и группу
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-3">
           <a
             href={CLUB.phoneHref}
             className="clip-cut-sm inline-flex items-center justify-center gap-2 bg-flame px-7 py-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-bone hover:shadow-[0_8px_30px_rgba(255,107,46,0.35)]"
           >
             <Phone className="h-4 w-4" />
             {CLUB.phone}
+          </a>
+          <a
+            href={CLUB.vk}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="clip-cut-sm inline-flex items-center justify-center gap-2 border border-bone/15 bg-moss px-7 py-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-bone transition-all duration-300 hover:-translate-y-0.5 hover:bg-flame hover:text-ink"
+          >
+            <VkIcon className="h-4 w-4" />
+            Написать в VK
           </a>
         </div>
       </div>
