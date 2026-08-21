@@ -51,10 +51,10 @@ export const SignupModal = () => {
           {CLUB.name}
         </p>
         <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight md:text-2xl">
-          Запись на пробное занятие
+          Записаться
         </h2>
         <p className="mt-4 text-sm text-khaki">
-          Запись — через связь с администрацией клуба или тренером:
+          Для записи позвоните по номеру телефона:
         </p>
         <div className="mt-6">
           <a

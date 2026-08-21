@@ -17,7 +17,6 @@ export const NAV = [
   { href: "#schedule", label: "Расписание" },
   { href: "#pricing", label: "Цены" },
   { href: "#trainer", label: "Тренер" },
-  { href: "#contacts", label: "Контакты" },
 ] as const;
 
 export const DIRECTIONS = [
