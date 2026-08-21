@@ -5,10 +5,10 @@ import { STATS } from "../data/club";
 
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
-const parseValue = (raw: string): { num: number; suffix: string } => {
+const parseValue = (raw: string) => {
   const match = raw.match(/^(\d+)(\+?)$/);
   if (!match) return { num: 0, suffix: raw };
-  return { num: Number(match[1]), suffix: match[2] ?? "" };
+  return { num: Number(match[1]), suffix: match[2] || "" };
 };
 
 const AnimatedValue = ({ raw }: { raw: string }) => {
@@ -21,22 +21,25 @@ const AnimatedValue = ({ raw }: { raw: string }) => {
     if (!el) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (let i = 0; i < entries.length; i++) {
+          const entry = entries[i];
           if (entry.isIntersecting && !hasAnimated.current) {
             hasAnimated.current = true;
-            const { num, suffix } = parseValue(raw);
+            const parsed = parseValue(raw);
+            const num = parsed.num;
+            const suffix = parsed.suffix;
             const duration = 1200;
             const start = performance.now();
             const tick = (now: number) => {
               const t = Math.min((now - start) / duration, 1);
               const eased = easeOutCubic(t);
               const current = Math.round(num * eased);
-              setDisplay(`${current}${suffix}`);
+              setDisplay(String(current) + suffix);
               if (t < 1) requestAnimationFrame(tick);
             };
             requestAnimationFrame(tick);
           }
-        });
+        }
       },
       { threshold: 0.3 }
     );
