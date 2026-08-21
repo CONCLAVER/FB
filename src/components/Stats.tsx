@@ -1,13 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const STATS = [
-  { value: "1993", label: "с этого года — тренерский стаж основателя" },
-  { value: "47", label: "профессиональных турниров организовано" },
-  { value: "7", label: "направлений подготовки в клубе" },
-  { value: "7+", label: "возраст старта в детских группах" },
-] as const;
+import { STATS } from "../data/club";
 
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
