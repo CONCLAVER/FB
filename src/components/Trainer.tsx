@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TRAINER } from "@/data/club";
+import { TRAINER } from "../data/club";
 import { SectionTitle } from "./SectionTitle";
 
 export const Trainer = () => (

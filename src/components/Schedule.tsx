@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CLUB, SCHEDULE, SCHEDULE_TABS, type ScheduleTabId } from "@/data/club";
+import { CLUB, SCHEDULE, SCHEDULE_TABS, type ScheduleTabId } from "../data/club";
 import { SectionTitle } from "./SectionTitle";
 
 export const Schedule = () => {

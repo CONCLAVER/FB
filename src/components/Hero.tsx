@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CLUB } from "@/data/club";
+import { CLUB } from "../data/club";
 import { ClipButton } from "./ClipButton";
 import { useSignup } from "./SignupModal";
 

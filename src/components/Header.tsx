@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { CLUB, NAV } from "@/data/club";
+import { CLUB, NAV } from "../data/club";
 import { ClipButton } from "./ClipButton";
 import { useSignup } from "./SignupModal";
 

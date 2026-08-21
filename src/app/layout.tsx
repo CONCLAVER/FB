@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Unbounded } from "next/font/google";
-import { SignupModalProvider } from "@/components/SignupModal";
+import { SignupModalProvider } from "../components/SignupModal";
 import "./globals.css";
 
 const unbounded = Unbounded({

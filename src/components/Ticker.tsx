@@ -1,4 +1,4 @@
-import { DIRECTIONS } from "@/data/club";
+import { DIRECTIONS } from "../data/club";
 
 const Row = () => (
   <div className="flex shrink-0 items-center">

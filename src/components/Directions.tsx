@@ -1,4 +1,4 @@
-import { DIRECTIONS } from "@/data/club";
+import { DIRECTIONS } from "../data/club";
 import { SectionTitle } from "./SectionTitle";
 
 export const Directions = () => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { PRICING } from "@/data/club";
+import { PRICING } from "../data/club";
 import { ClipButton } from "./ClipButton";
 import { SectionTitle } from "./SectionTitle";
 import { useSignup } from "./SignupModal";

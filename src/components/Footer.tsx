@@ -1,5 +1,5 @@
 import { Clock, MapPin, Phone } from "lucide-react";
-import { CLUB } from "@/data/club";
+import { CLUB } from "../data/club";
 import { IconBadge } from "./IconBadge";
 import { VkIcon } from "./VkIcon";
 

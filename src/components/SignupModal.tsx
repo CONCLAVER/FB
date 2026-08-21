@@ -10,7 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { Phone, X } from "lucide-react";
-import { CLUB } from "@/data/club";
+import { CLUB } from "../data/club";
 import { ClipButton } from "./ClipButton";
 
 const SignupContext = createContext<(label?: string) => void>(() => {});

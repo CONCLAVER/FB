@@ -1,4 +1,4 @@
-import { PREP } from "@/data/club";
+import { PREP } from "../data/club";
 import { SectionTitle } from "./SectionTitle";
 
 export const About = () => (
