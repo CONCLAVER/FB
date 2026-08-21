@@ -51,7 +51,7 @@ export const SignupModal = () => {
           {CLUB.name}
         </p>
         <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight md:text-2xl">
-          Записаться
+          {CLUB.slogan}
         </h2>
         <p className="mt-4 text-sm text-khaki">
           Для записи позвоните по номеру телефона:
