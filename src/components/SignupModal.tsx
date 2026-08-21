@@ -1,91 +1,71 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { useState, useEffect } from "react";
 import { Phone, X } from "lucide-react";
 import { CLUB } from "../data/club";
-import { ClipButton } from "./ClipButton";
 
-const SignupContext = createContext<(label?: string) => void>(() => {});
-
-export const useSignup = () => useContext(SignupContext);
-
-export const SignupModalProvider = ({ children }: { children: ReactNode }) => {
-  const [open, setOpen] = useState(false);
-  const [label, setLabel] = useState<string | null>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
-
-  const openSignup = useCallback((l?: string) => {
-    setLabel(l ?? null);
-    setOpen(true);
-  }, []);
-  const close = useCallback(() => setOpen(false), []);
+export const SignupModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-    };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
+    (window as any).openSignupModal = () => setIsOpen(true);
+    (window as any).closeSignupModal = () => setIsOpen(false);
+
     return () => {
-      document.removeEventListener("keydown", onKey);
+      delete (window as any).openSignupModal;
+      delete (window as any).closeSignupModal;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleEsc);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleEsc);
       document.body.style.overflow = "";
     };
-  }, [open, close]);
+  }, [isOpen]);
+
+  if (!isOpen) return null;
 
   return (
-    <SignupContext.Provider value={openSignup}>
-      {children}
-      {open && (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center px-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Запись на пробное занятие"
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div
+        className="absolute inset-0 bg-ink/90 backdrop-blur-sm"
+        onClick={() => setIsOpen(false)}
+      />
+      <div className="relative w-full max-w-md bg-moss border border-bone/15 p-8 md:p-10">
+        <button
+          type="button"
+          onClick={() => setIsOpen(false)}
+          aria-label="Закрыть"
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center border border-bone/15 bg-ink text-flame transition-colors hover:bg-flame hover:text-ink"
         >
-          <button
-            type="button"
-            aria-label="Закрыть окно записи"
-            onClick={close}
-            className="animate-fade-in absolute inset-0 h-full w-full cursor-default bg-ink/85 backdrop-blur-sm"
-          />
-          <div className="animate-modal-in clip-cut relative w-full max-w-md bg-moss p-8 md:p-10">
-            <button
-              ref={closeRef}
-              type="button"
-              onClick={close}
-              aria-label="Закрыть"
-              className="clip-cut-sm absolute right-4 top-4 flex h-8 w-8 items-center justify-center border border-bone/15 bg-ink text-flame transition-colors hover:bg-flame hover:text-ink focus-visible:outline-2 focus-visible:outline-flame"
-            >
-              <X />
-            </button>
-            <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-flame">
-              {CLUB.name}
-            </p>
-            <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight md:text-2xl">
-              {label ?? "Запись на пробное занятие"}
-            </h2>
-            <p className="mt-4 text-sm text-khaki">
-              Запись — через связь с администрацией клуба или тренером:
-            </p>
-            <div className="mt-6">
-              <ClipButton href={CLUB.phoneHref}>
-                <Phone className="h-4 w-4" />
-                {CLUB.phone}
-              </ClipButton>
-            </div>
-          </div>
+          <X className="h-4 w-4" />
+        </button>
+        <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-flame">
+          {CLUB.name}
+        </p>
+        <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight md:text-2xl">
+          Запись на пробное занятие
+        </h2>
+        <p className="mt-4 text-sm text-khaki">
+          Запись — через связь с администрацией клуба или тренером:
+        </p>
+        <div className="mt-6">
+          <a
+            href={CLUB.phoneHref}
+            className="clip-cut-sm inline-flex items-center justify-center gap-2 bg-flame px-7 py-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-bone hover:shadow-[0_8px_30px_rgba(255,107,46,0.35)]"
+          >
+            <Phone className="h-4 w-4" />
+            {CLUB.phone}
+          </a>
         </div>
-      )}
-    </SignupContext.Provider>
+      </div>
+    </div>
   );
 };

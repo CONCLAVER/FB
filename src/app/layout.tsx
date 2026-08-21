@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Unbounded } from "next/font/google";
-import { SignupModalProvider } from "../components/SignupModal";
+import { SignupModal } from "../components/SignupModal";
 import "./globals.css";
 
 const unbounded = Unbounded({
@@ -29,14 +29,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="ru"
       className={`${unbounded.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ink text-bone">
-        <SignupModalProvider>{children}</SignupModalProvider>
+        {children}
+        <SignupModal />
       </body>
     </html>
   );

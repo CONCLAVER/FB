@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CLUB, NAV } from "../data/club";
-import { ClipButton } from "./ClipButton";
-import { useSignup } from "./SignupModal";
-
-const navLink =
-  "relative text-sm font-semibold uppercase tracking-wider text-khaki transition-colors hover:text-flame after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-flame after:transition-transform after:duration-300 hover:after:scale-x-100";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
-  const openSignup = useSignup();
+
+  const handleSignup = () => {
+    if ((window as any).openSignupModal) {
+      (window as any).openSignupModal();
+    }
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-bone/10 bg-ink/85 backdrop-blur-md">
@@ -39,7 +39,11 @@ export const Header = () => {
           aria-label="Основная навигация"
         >
           {NAV.map((item) => (
-            <a key={item.href} href={item.href} className={navLink}>
+            <a
+              key={item.href}
+              href={item.href}
+              className="relative text-sm font-semibold uppercase tracking-wider text-khaki transition-colors hover:text-flame after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-flame after:transition-transform after:duration-300 hover:after:scale-x-100"
+            >
               {item.label}
             </a>
           ))}
@@ -52,9 +56,13 @@ export const Header = () => {
           >
             {CLUB.phone}
           </a>
-          <ClipButton size="sm" onClick={openSignup}>
+          <button
+            type="button"
+            onClick={handleSignup}
+            className="clip-cut-sm inline-flex items-center justify-center gap-2 bg-flame px-5 py-2.5 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-bone hover:shadow-[0_8px_30px_rgba(255,107,46,0.35)]"
+          >
             Записаться
-          </ClipButton>
+          </button>
         </div>
 
         <button
@@ -89,16 +97,16 @@ export const Header = () => {
           >
             {CLUB.phone}
           </a>
-          <ClipButton
-            size="sm"
-            className="self-start"
+          <button
+            type="button"
             onClick={() => {
               setOpen(false);
-              openSignup();
+              handleSignup();
             }}
+            className="clip-cut-sm inline-flex items-center justify-center gap-2 bg-flame px-5 py-2.5 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-bone hover:shadow-[0_8px_30px_rgba(255,107,46,0.35)]"
           >
             Записаться
-          </ClipButton>
+          </button>
         </nav>
       )}
     </header>

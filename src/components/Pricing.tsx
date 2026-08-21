@@ -1,12 +1,14 @@
 "use client";
 
 import { PRICING } from "../data/club";
-import { ClipButton } from "./ClipButton";
 import { SectionTitle } from "./SectionTitle";
-import { useSignup } from "./SignupModal";
 
 export const Pricing = () => {
-  const openSignup = useSignup();
+  const handleSignup = () => {
+    if ((window as any).openSignupModal) {
+      (window as any).openSignupModal();
+    }
+  };
 
   return (
     <section id="pricing" className="border-y border-bone/10 bg-moss/50">
@@ -30,33 +32,33 @@ export const Pricing = () => {
                 <h3 className="font-display text-base font-black uppercase">
                   {p.title}
                 </h3>
-              <p className="mt-4 font-display text-3xl font-black text-flame md:text-4xl">
-                {p.price}
-                {p.price !== "по запросу" && <span className="text-lg text-khaki"> ₽</span>}
-              </p>
-              <p className="mt-1 text-sm text-khaki">{p.period}</p>
-              {p.perLesson && (
-                <p className="mt-2 text-xs text-flame">{p.perLesson}</p>
-              )}
-              <ul className="mt-6 flex-1 space-y-2">
-                {p.features.map((f) => (
-                  <li key={f} className="flex gap-2 text-sm text-khaki">
-                    <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 rotate-45 bg-flame" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-                <ClipButton
-                  onClick={() =>
-                    openSignup(
-                      p.title === "Пробное" ? undefined : `Абонемент «${p.title}»`
-                    )
-                  }
-                  variant={p.featured ? "primary" : "ghost"}
-                  className="mt-8 w-full"
+                <p className="mt-4 font-display text-3xl font-black text-flame md:text-4xl">
+                  {p.price}
+                  {p.price !== "по запросу" && <span className="text-lg text-khaki"> ₽</span>}
+                </p>
+                <p className="mt-1 text-sm text-khaki">{p.period}</p>
+                {p.perLesson && (
+                  <p className="mt-2 text-xs text-flame">{p.perLesson}</p>
+                )}
+                <ul className="mt-6 flex-1 space-y-2">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex gap-2 text-sm text-khaki">
+                      <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 rotate-45 bg-flame" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  type="button"
+                  onClick={handleSignup}
+                  className={`mt-8 w-full clip-cut-sm border-2 py-3 font-display text-xs font-bold uppercase tracking-widest transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none ${
+                    p.featured
+                      ? "border-flame bg-flame text-ink shadow-[4px_4px_0_#f5f5f5]"
+                      : "border-bone/15 bg-moss text-bone shadow-[4px_4px_0_#ff6b2e] hover:bg-flame hover:text-ink"
+                  }`}
                 >
                   Записаться
-                </ClipButton>
+                </button>
               </article>
             </div>
           ))}
