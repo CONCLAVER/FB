@@ -66,7 +66,7 @@ export const SignupModal = () => {
             {CLUB.phone}
           </a>
           <a
-            href={CLUB.vk}
+            href="https://vk.ru/im/convo/15169162?tab=all"
             target="_blank"
             rel="noopener noreferrer"
             className="clip-cut-sm inline-flex items-center justify-center gap-2 border border-bone/15 bg-moss px-7 py-4 font-display text-xs font-bold uppercase tracking-[0.2em] text-bone transition-all duration-300 hover:-translate-y-0.5 hover:bg-flame hover:text-ink"
